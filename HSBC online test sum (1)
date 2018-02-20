@@ -1,0 +1,33 @@
+/* A perfect number is a positive integer that is equal to the sum of its proper positive divisor, i.e. the sum of its positive divisiors excluding the number itself.
+
+the function accepts an integer 'n' as its argument. Implement the function such that it returns '1' if 'n' is a perfect number ,
+else returns the sum of the proper divisors of 'n'.
+
+I/P : 22
+O/P : 14
+
+Explanation : proper positive divisors of 22 are 1,2 and 11. 
+              1+2+11=14 which is not equal to 22, hence 22 is not a perfect number.
+              so the o/p is 14 which is the sum of its proper divisors.
+*/
+
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  DetectPerfectNumber(n);
+  return 0;
+}
+int DetectPerfectNumber(int n)
+{
+   int sum=0,i;
+   for(i=1;i<n;i++)
+   {
+        if(n%i==0)
+          sum+=i;
+   }
+   if(sum==n)
+       return 1;
+   else
+       return sum;
+ }
