@@ -1,0 +1,18 @@
+//Colleen is having a birthday! She will have a cake with one candle for each year of her age. When she blows out the candles, she’ll only be able to blow out the tallest ones.
+//Find and print the number of candles she can successfully blow out.
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int main() 
+{
+    int start_1, speed_1, start_2, speed_2;
+    scanf("%d %d %d %d", &start_1, &speed_1, &start_2, &speed_2);
+    
+    printf(speed_1 > speed_2 && (start_1 - start_2)%(speed_2 - speed_1) == 0 ? "YES\n" : "NO\n");
+    return 0;
+}
