@@ -17,5 +17,6 @@ int main()
     scanf("%d %d %d %d", &start_1, &speed_1, &start_2, &speed_2);
     
     printf(speed_1 > speed_2 && (start_1 - start_2)%(speed_2 - speed_1) == 0 ? "YES\n" : "NO\n");
+    // a mod fun is used to check if the two kangroo's steps are multiples of each other
     return 0;
 }
