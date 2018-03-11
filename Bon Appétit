@@ -1,0 +1,33 @@
+//https://www.hackerrank.com/challenges/bon-appetit/problem
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    int n,i,k,r,sum=0,val=0,result=0;
+    scanf("%d %d",&n,&k);
+    int *c=(int *)malloc(sizeof(int)*n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&c[i]);
+    }
+    scanf("%d",&r);
+    for(i=0;i<n;i++)
+    {
+        if(i!=k)
+        {
+            sum+=c[i];
+        }
+    }
+    val=sum/2;
+    if(val==r)
+        printf("Bon Appetit");
+    else
+        printf("%d",r-val);
+    return 0;
+}
