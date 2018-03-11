@@ -1,0 +1,58 @@
+/*Maria plays n games of college basketball in a season. Because she wants to go pro, she tracks her points scored per game sequentially
+in an array defined as score.
+After each game , she checks to see if score score[i] breaks her record for most or least points scored so far during that season.
+
+Given Maria's array of scores for a season of  games, find and print the number of times she breaks her record for most and least
+points scored during the season.
+
+https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int[] getRecord(int[] s) {
+    int i;
+    int highest, lowest;
+    highest = lowest = s[0];
+    int[] result = new int[2];
+    for (i=1;i<s.length;i++)
+    {
+        if (s[i] >highest)
+        {
+            highest = s[i];
+            ++result[0];
+        }
+        else if (s[i]<lowest)
+        {
+            lowest = s[i];
+            ++result[1];
+        }
+    }
+        return result;
+}
+    
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] score = new int[n];
+        for(int score_i = 0; score_i < n; score_i++){
+            score[score_i] = in.nextInt();
+        }
+        int[] result = getRecord(score);
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
+        }
+        System.out.println("");
+
+
+        in.close();
+    }
+}
+
