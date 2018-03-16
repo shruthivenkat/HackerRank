@@ -1,0 +1,26 @@
+//https://www.hackerrank.com/challenges/camelcase/problem
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        int val=1; //you are aloready considering the first small case word
+       int i;
+        for(i=1;i<s.length();i++)
+        {
+            String letter=Character.toString(s.charAt(i));
+            if(letter==letter.toUpperCase())
+            {
+                    val++;
+            }
+        }
+        System.out.println(val);
+        in.close();
+    }
+}
