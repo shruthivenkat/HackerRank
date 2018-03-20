@@ -1,0 +1,38 @@
+//https://www.hackerrank.com/challenges/sparse-arrays/problem
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    
+    int n,i,q,j,count;
+    cin>>n;
+    string a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    cin>>q;
+    string b[q];
+    for(i=0;i<q;i++)
+    {
+        cin>>b[i];
+    }
+    for(i=0;i<q;i++)
+    {
+        count=0;
+        for(j=0;j<n;j++)
+        {
+            if(b[i]==a[j])
+            {
+                count++;
+            }
+           
+        }cout<<count<<"\n";
+    }
+}
+
+//when written in C, the compiler detects the first character of every word. it fails to check if the word matches or not. 
+//in C++, the "string" datatype helps in grouping the characters together as a single word. hence, the whole word is checked to see if it matches or not.
