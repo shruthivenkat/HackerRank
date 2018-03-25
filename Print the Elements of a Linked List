@@ -1,0 +1,22 @@
+//https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/problem
+
+void Print(Node *head)
+{
+  // This is a "method-only" submission. 
+  // You only need to complete this method. 
+    if(head!=NULL)
+    {
+           struct Node *temp;
+            temp=head;
+            while(temp!=NULL)
+            {
+                cout<<temp->data<<"\n";
+                temp=temp->next;
+            }
+    }
+    else
+    {
+        cout<<"";
+    }
+    
+}
