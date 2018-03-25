@@ -1,0 +1,19 @@
+//https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem
+
+Node* Insert(Node *head,int data)
+{
+    struct Node *newNode=(struct Node *)malloc(sizeof(struct Node));
+    newNode->data=data;
+    if(head==NULL)
+    {
+        head=newNode;
+        newNode->next=NULL;
+    }
+    else
+    {
+        struct Node *temp=head;
+        newNode->next=temp;
+        head=newNode;
+    }
+    return head;
+}
