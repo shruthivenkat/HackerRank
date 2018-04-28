@@ -1,0 +1,36 @@
+//https://www.hackerrank.com/challenges/mars-exploration/problem
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int main()
+{
+    int i,len,counto,counts,total;
+    char* S = (char *)malloc(10240 * sizeof(char));
+    scanf("%s",S);
+    len=strlen(S)/3;
+   // len=len/3;
+    counto=0;
+    counts=0;
+    total=0;
+    for(i=0;i<len;i++) {
+        if(S[3*i]!='S') {
+         counts++;
+    }
+    if(S[2*i+2+i]!='S') {
+        counts++;
+    }
+    if(S[3*i+1]!='O') {
+        counto++;
+    }
+    }
+    total=counts+counto;
+
+    printf("%d",total); 
+
+    return 0;
+}
